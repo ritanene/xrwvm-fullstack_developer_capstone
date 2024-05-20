@@ -49,6 +49,7 @@ app.get('/fetchReviews', async (req, res) => {
 // Express route to fetch reviews by a particular dealer
 app.get('/fetchReviews/dealer/:id', async (req, res) => {
   try {
+    console.log('idddd',req.params.id)
     const documents = await Reviews.find({dealership: req.params.id});
     res.json(documents);
   } catch (error) {
